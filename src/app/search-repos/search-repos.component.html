@@ -1,0 +1,7 @@
+<input type="text" #input>
+<button (click)="getGithub()">ok</button>
+<ul>
+  <li [appEmphasize]="item" *ngFor="let item of (githubers$ | async | items)">
+    <span>{{ item.name }}</span>
+  </li>
+</ul>
