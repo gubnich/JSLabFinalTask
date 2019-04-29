@@ -1,8 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from "@angular/core";
 
-@Pipe({name: 'items'})
+@Pipe({ name: "items" })
 export class Items implements PipeTransform {
   transform(value) {
-    return value ? value.items : []
+    return value ? value.items : [];
   }
 }

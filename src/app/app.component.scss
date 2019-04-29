@@ -1,19 +1,16 @@
 :host {
   display: flex;
   flex-direction: column;
-  height: 10rem;
+  // min-height: 10rem;
   justify-content: space-between;
   align-items: center;
-    .nav {
-      display: flex;
-      width: 33%;
-      justify-content: space-evenly;
-      .active {
-        color: red;
-      }
+  padding-top: 200px;
+  .nav {
+    display: flex;
+    width: 33%;
+    justify-content: space-evenly;
+    .active {
+      color: red;
     }
-    input {
-      width: 50%;
-    }
+  }
 }
-
