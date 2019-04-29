@@ -10,7 +10,7 @@ import {
 import { Observable, throwError } from "rxjs";
 import { retry, catchError, tap, switchMap } from "rxjs/operators";
 
-const token = "9b1031a5a414f9cbfce4e77e34da5199931965d8"; // your github token here
+const token = "eac8fa6b3607efc7a2d165b1e1e77604dd4377c1"; // your github token here
 
 @Injectable()
 export class AppInterceptor {

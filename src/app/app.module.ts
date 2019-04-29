@@ -9,10 +9,25 @@ import { Items } from './search-users/items.pipe';
 import { EmphasizeDirective } from './emphasize.directive';
 import { SearchReposComponent } from './search-repos/search-repos.component';
 import { AppInterceptor } from './app.interceptor';
+import { UserResolver } from './user-resolver';
+import { UserComponent } from './user/user.component';
+import { AppService } from './app-service';
+import { RepoComponent } from './repo/repo.component';
+import { RepoResolver } from './repo-resolver';
 
 const appRoutes: Routes = [
   { path: 'users', component: SearchUsersComponent },
   { path: 'repos', component: SearchReposComponent },
+  {
+    path: 'users/:login',
+    component: UserComponent,
+    resolve: { userData: UserResolver }
+  },
+  {
+    path: 'repos/:id',
+    component: RepoComponent,
+    resolve: { repoData: RepoResolver }
+  }
 ];
 
 @NgModule({
@@ -21,7 +36,9 @@ const appRoutes: Routes = [
     SearchUsersComponent,
     Items,
     EmphasizeDirective,
-    SearchReposComponent
+    SearchReposComponent,
+    UserComponent,
+    RepoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +54,10 @@ const appRoutes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: AppInterceptor,
       multi: true
-  }],
+  },
+  UserResolver,
+  RepoResolver,
+  AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
