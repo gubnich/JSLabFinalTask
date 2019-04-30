@@ -1,0 +1,19 @@
+<h2>{{ user.login }}</h2>
+<img src="{{ user.avatar_url }}" />
+<ul>
+    <li>id: {{ user.id }}</li>
+    <li>url: {{ user.html_url }}</li>
+    <li>type: {{ user.type }}</li>
+    <li>name: {{ user.name }}</li>
+    <li>company: {{ user.company }}</li>
+    <li>blog: {{ user.blog }}</li>
+    <li>location: {{ user.location }}</li>
+    <li>email: {{ user.email }}</li>
+    <li>bio: {{ user.bio }}</li>
+    <li>public_repos: {{ user.public_repos }}</li>
+    <li>public_gists: {{ user.public_gists }}</li>
+    <li>followers: {{ user.followers }}</li>
+    <li>following: {{ user.following }}</li>
+    <li>created_at: {{ user.created_at | date: "dd/MM/yyyy" }}</li>
+    <li>updated_at: {{ user.updated_at | date: "dd/MM/yyyy" }}</li>
+</ul>

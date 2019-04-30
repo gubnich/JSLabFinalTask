@@ -1,0 +1,21 @@
+<input type="text" #input />
+<ul>
+    <li class="item" *ngFor="let item of githubers$ | async | items">
+        <a routerLink="{{ item.id }}">
+            <img
+                class="avatar"
+                src="{{ item.owner.avatar_url }}"
+                alt="{{ item.name }}"
+            />
+        </a>
+        <ul class="repoinfo">
+            <li>{{ item.owner.login }}</li>
+            <li>
+                <a href="{{ item.owner.html_url }}">{{
+                    item.owner.html_url
+                }}</a>
+            </li>
+            <li [appEmphasize]="item">Score: {{ item.score }}</li>
+        </ul>
+    </li>
+</ul>
